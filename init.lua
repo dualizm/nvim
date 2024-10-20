@@ -4,12 +4,7 @@
 -- @brief: Configuration file for nvim
 --]]
 
-local utils = require 'utils'
-
---[[
-utils.require_plugins {
-}
---]]
-
 require 'core'
---require 'theme'
+require 'binds'
+
+require 'lazy_init'
