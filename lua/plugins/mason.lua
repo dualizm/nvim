@@ -1,3 +1,5 @@
+local servers = require("servers")
+
 return {
 	"williamboman/mason.nvim",
 	dependencies = {
@@ -9,22 +11,11 @@ return {
 
 		require("mason-lspconfig").setup({
 			automatic_installation = true,
-			ensure_installed = {
-				"cssls",
-				"eslint",
-				"html",
-				"jsonls",
-				"ts_ls",
-				"gopls",
-			},
+			ensure_installed = servers.lsp_ensure,
 		})
 
 		require("mason-tool-installer").setup({
-			ensure_installed = {
-				"prettier",
-				"stylua", -- lua formatter
-				"eslint_d",
-			},
+			ensure_installed = servers.tool_ensure,
 		})
 	end,
 }

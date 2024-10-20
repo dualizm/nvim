@@ -1,5 +1,4 @@
 local utils = require("utils")
-local vbind = vim.keymap.set
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -16,4 +15,12 @@ utils.do_binds({
 	{ "n", "<C-h>", "<C-w>h" },
 	{ "n", "<C-j>", "<C-w>j" },
 	{ "n", "<C-k>", "<C-w>k" },
+})
+
+-- resize with arrows
+utils.do_binds({
+	{ "n", "<C-Up>", ":resize -2<cr>" },
+	{ "n", "<C-Down>", ":resize +2<cr>" },
+	{ "n", "<C-Left>", ":vertical resize -2<cr>" },
+	{ "n", "<C-Right>", ":vertical resize +2<cr>" },
 })
